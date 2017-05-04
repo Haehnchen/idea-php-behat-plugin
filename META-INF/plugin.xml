@@ -1,0 +1,48 @@
+<idea-plugin url="https://github.com/Haehnchen/idea-php-behat-plugin">
+  <id>de.espend.idea.php.behat</id>
+  <name>Behat Enhancement</name>
+  <version>0.1</version>
+  <vendor email="daniel@espendiller.net" url="http://espend.de">Daniel Espendiller</vendor>
+
+  <description>
+    <![CDATA[
+    <h2>Features</h2>
+    <ul>
+      <li>Linemarker and intention for test runner in Feature and Scenario</li>
+      </ul>
+    ]]>
+  </description>
+
+  <change-notes>
+    <![CDATA[
+    <h3>0.1</h3>
+    <ul>
+        <li>First release</li>
+        <li>Linemarker and intention for test runner in Feature and Scenario <a href="https://github.com/Haehnchen/idea-php-behat-plugin/issues/1">#1</a></li>
+    </ul>
+  ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="171.3780"/>
+
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.jetbrains.php</depends>
+  <depends>com.jetbrains.php.behat</depends>
+  <depends>gherkin</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <codeInsight.lineMarkerProvider language="Gherkin" implementationClass="de.espend.idea.php.behat.linemarker.TestRunLineMarkerProvider"/>
+
+    <intentionAction>
+      <className>de.espend.idea.php.behat.intention.TestRunIntentionAction</className>
+      <category>Behat</category>
+      <descriptionDirectoryName>TestRunIntentionAction</descriptionDirectoryName>
+    </intentionAction>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
